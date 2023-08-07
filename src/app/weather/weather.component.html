@@ -1,0 +1,72 @@
+
+<div class="search">
+    <form #form="ngForm" (submit)="onSubmit()">
+        <input 
+            type="text" 
+            placeholder="Search city" 
+            name="city" 
+            [(ngModel)]="cityName"
+            class="searchText"
+        >
+    </form>
+</div>
+
+<div class="container" *ngIf="weatherData">
+    <div class="upper-data">
+      <img src="../assets/weatherImages/hot.png" *ngIf="weatherData.current.temp_c > 15">
+      <img src="../assets/weatherImages/cold.avif" *ngIf="weatherData.current.temp_c <= 15">
+  
+      <div class="weather-data">
+        <div class="location"> <strong>{{weatherData.location.name}}</strong> </div>
+        <div class="temperature"> {{ weatherData.current.temp_c | number: '1.0-0' }}°C </div>
+      </div>
+    </div>
+    <div class="lower-data">
+      <div class="more-info-label">
+        More Information
+      </div>
+      <div class="more-info-container">
+          
+        <div class="info-block">
+            <div class="info-block-label">
+                <img src="../assets/weatherImages/max.png">
+                <span>Feels like</span>
+            </div>
+            <div class="info-block-value">
+                {{ weatherData.current.feelslike_c | number: '1.0-0' }}°C
+            </div>
+        </div>
+            
+        <div class="info-block">
+            <div class="info-block-label">
+            <img src="../../assets/weatherImages/cloud.png">
+            <span>clouds</span>
+            </div>
+            <div class="info-block-value">
+            {{ weatherData.current.cloud | number: '1.0-0' }}%
+            </div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-block-label">
+            <img src="../assets/weatherImages/humidity.png">
+            <span>humidity</span>
+          </div>
+          <div class="info-block-value">
+            {{ weatherData.current.humidity }}%
+          </div>
+        </div>
+  
+        <div class="info-block">
+          <div class="info-block-label">
+            <img src="../assets/weatherImages/wind.png">
+            <span>wind</span>
+          </div>
+          <div class="info-block-value">
+            {{ weatherData.current.wind_kph | number: '1.0-0'}} km/h
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>

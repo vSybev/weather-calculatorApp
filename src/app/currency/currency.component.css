@@ -1,0 +1,33 @@
+.container {
+    width: 400px;
+    height: 80vh;
+    background-color: var(--blue-2);
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px var(--shadow-dark);
+}
+
+label,input{
+    display: block;
+}
+
+.amountInput{
+    width: 70%;
+    background-color: transparent;
+    height: 40px;
+    border: none;
+    border-bottom: 2px solid black;
+    margin-left: 15%;
+    color: white;
+    font-size: x-large;
+}
+
+.amountContainer{
+    width: 100%;
+    height: 7%;
+    border: none;
+    margin-top: 5%;
+}
+
+.header{
+    height: 3%;
+}

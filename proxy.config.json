@@ -1,0 +1,11 @@
+{
+    "/mock/service/getInfo/": {
+         "target": "https://weather-api99.p.rapidapi.com/weather",
+         "pathRewrite": {
+            "/api" : true
+         },
+         "secure": false,
+         "changeOrigin": true,
+         "logLevel": "debug"
+    }
+}
